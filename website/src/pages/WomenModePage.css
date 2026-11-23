@@ -1,0 +1,31 @@
+
+.women-map-user,
+.women-map-incident {
+  background: transparent;
+  border: none;
+}
+
+.women-user-dot {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: #2878ff;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.women-map-incident span {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  background: #e43d50;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  border-radius: 50% 50% 50% 5px;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.25);
+}
