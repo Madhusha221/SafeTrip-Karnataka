@@ -8,6 +8,7 @@ from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
+import logging
 from django.contrib.auth import authenticate
 
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -188,12 +189,24 @@ class CurrentUserAPIView(APIView):
 # ============================================================
 
 
+# ============================================================
+# DISTRICTS
+# ============================================================
+
 class DistrictViewSet(viewsets.ModelViewSet):
 
     queryset = District.objects.all().order_by("name")
-
     serializer_class = DistrictSerializer
 
+    def list(self, request, *args, **kwargs):
+        try:
+            return super().list(request, *args, **kwargs)
+
+        except Exception:
+            logging.getLogger(__name__).exception(
+                "SAFETRIP DISTRICTS API ERROR"
+            )
+            raise
 
 # ============================================================
 # PLACES
